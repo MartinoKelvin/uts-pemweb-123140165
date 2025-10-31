@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248, 250, 252;
+    --border: 226, 232, 240;
+    --card: 255, 255, 255;
+    --copy-primary: 15, 23, 42;
+    --copy-secondary: 71, 85, 105;
+    --cta: 37, 99, 235;
+    --cta-active: 29, 78, 216;
+    --cta-text: 255, 255, 255;
+  }
+
+  .dark {
+    --background: 15, 23, 42;
+    --border: 51, 65, 85;
+    --card: 30, 41, 59;
+    --copy-primary: 241, 245, 249;
+    --copy-secondary: 148, 163, 184;
+    --cta: 59, 130, 246;
+    --cta-active: 96, 165, 250;
+    --cta-text: 255, 255, 255;
+  }
+}
+
+@layer components {
+  .app-background {
+    @apply transition-colors duration-300;
+    background-color: rgb(var(--background));
+    color: rgb(var(--copy-primary));
+  }
+
+  .app-card {
+    @apply transition-colors duration-300 rounded-lg border;
+    background-color: rgb(var(--card));
+    border-color: rgb(var(--border));
+  }
+
+  .app-heading {
+    color: rgb(var(--copy-primary));
+  }
+
+  .app-subtext {
+    color: rgb(var(--copy-secondary));
+  }
+  .footer-background {
+    background-color: rgb(var(--card)); /* ikut tema */
+    transition: background-color 0.3s ease;
+  }
+
+  /* kalau pengen semi transparan: */
+  .footer-background-soft {
+    background-color: rgb(var(--card) / 0.85);
+    transition: background-color 0.3s ease;
+  }
+}
