@@ -7,8 +7,21 @@ import ContactUsPage from "./pages/ContactUsPage"
 import { Contact } from "lucide-react"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import LoadingScreen from "./components/LoadingScreen"
+import { useState, useEffect } from "react"
 
 export default function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // simulasi loading 2 detik
+    const timer = setTimeout(() => setLoading(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <LoadingScreen /> // tampilkan logo berputar dulu
+  }
   return (
     <BrowserRouter>
     <div className="app-background min-h-screen flex flex-col">

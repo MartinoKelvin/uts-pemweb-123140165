@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+      'spin-slow': 'spin 2s linear infinite',
+      },
       colors: {
         background: "rgb(var(--background))",
         border: "rgb(var(--border))",
