@@ -91,7 +91,7 @@ bun install
 ### 3. Menjalankan Mode Pengembangan
 
 ```bash
-pm run dev
+npm run dev
 ```
 
 Buka URL yang muncul di terminal (umumnya `http://localhost:5173`)
