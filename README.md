@@ -70,39 +70,7 @@ Seluruh fitur, halaman, dan komponen dibuat dengan  **React + Tailwind CSS** , d
 
 ## Struktur Direktori Inti
 
-src/
-├── assets/                     # File statis (logo, gambar, ikon, dsb)
-│
-├── components/                 # Kumpulan komponen UI dan layout utama
-│   ├── FeaturesSection.jsx     # Section fitur di halaman utama
-│   ├── FilterPanel.jsx         # Panel filter platform di halaman games
-│   ├── Footer.jsx              # Bagian footer global
-│   ├── GameGrid.jsx            # Tampilan grid untuk daftar game
-│   ├── GameTable.jsx           # Tampilan tabel untuk daftar game
-│   ├── HeroSection.jsx         # Hero utama di halaman landing
-│   ├── LoadingScreen.jsx       # Loading overlay global (saat awal)
-│   ├── LoadingState.jsx        # Skeleton loading untuk data game
-│   ├── Navbar.jsx              # Navigasi utama (responsive + dark mode)
-│   ├── SearchForm.jsx          # Form pencarian + sort + view toggle
-│   ├── StatsSection.jsx        # Statistik (game, genre, platform)
-│   └── ThemeToggle.jsx         # Tombol pengatur dark/light mode
-│
-├── lib/                        # Modul pendukung (logic/API/helper)
-│   └── api.js                  # Fungsi fetch data dari RAWG.io API
-│
-├── pages/                      # Halaman utama aplikasi (per route)
-│   ├── ContactUsPage.jsx       # Halaman form kontak (HTML5 validated)
-│   ├── GameDetailPage.jsx      # Halaman detail tiap game
-│   ├── GamesPage.jsx           # Halaman daftar game (filter, pagination)
-│   ├── LandingPage.jsx         # Halaman utama (hero, fitur, statistik)
-│   └── NotFoundPage.jsx        # Halaman 404 custom
-│
-├── App.css                     # Style tambahan (opsional)
-├── App.jsx                     # Root komponen utama (router + layout)
-├── index.css                   # Style global + variabel tema Tailwind
-├── main.jsx                    # Entry point React (render ke DOM)
-│
-└── .gitignore                  # File konfigurasi Git
+![1761914343289](image/README/1761914343289.png)
 
 ---
 
