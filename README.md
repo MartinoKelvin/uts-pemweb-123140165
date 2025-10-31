@@ -1,16 +1,138 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Martino GameDB - UTS Studi Kasus Rawg io API Game
 
-Currently, two official plugins are available:
+**Nama:** Martino Kelvin
+**NIM:** 123140165
+**Deployment:** [Lihat disini](https://martinogamedb.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Gambaran Proyek
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Aplikasi ini merupakan **studi kasus UTS Pemrograman Web** yang menggunakan **RAWG.io Game API** untuk menampilkan data game, platform, rating, dan genre.
 
-## Expanding the ESLint configuration
+Seluruh fitur, halaman, dan komponen dibuat dengan  **React + Tailwind CSS** , dan sudah menyesuaikan rubrik penilaian **CPMK0501** dan **CPMK0502 . [API LINK](https://rawg.io/apidocs)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Fitur Utama
+
+### Home(`src/pages/LandingPage.jsx`)
+
+- Hero section dengan deskripsi dan tombol navigasi.
+- Statistik platform, game, dan genre dari API.
+- Section fitur (“Smart Search”, “Detailed Info”, dll).
+- Desain responsif dan sudah mendukung dark/light mode.
+
+### Games(`src/pages/GamesPage.jsx`)
+
+- Fetch data dari **RAWG.io API** menggunakan fungsi `fetchGames`.
+- Pencarian game berdasarkan nama, platform, dan urutan (rating atau tanggal rilis).
+- Filter platform (PC, PlayStation, Xbox).
+- Pagination (Next/Previous) dengan status halaman aktif.
+- Dua tampilan: **grid view** dan  **table view** .
+- Komponen modular: `SearchForm`, `FilterPanel`, `GameGrid`, `GameTable`.
+- Skeleton/Loading state saat memuat data.
+
+### Contact Us(`src/pages/ContactUsPage.jsx`)
+
+- Form HTML5 validasi otomatis (`required`, `type`, `pattern`, dll).
+- Input: nama, email, nomor telepon, subjek, pesan.
+- Feedback visual saat input invalid.
+- Tema mengikuti dark/light mode global.
+
+### **Not Found (`src/pages/NotFoundPage.jsx`)**
+
+- Halaman 404 khusus dengan tombol “Back to Home”.
+
+---
+
+## Kesesuaian Rubrik
+
+### **CPMK0501: Form, Tabel, CSS**
+
+- Form “Contact Us” memiliki >5 input berbeda dan validasi HTML5.
+- Tabel di halaman “Games” menampilkan kolom: Judul, Rating, Platform, dan Genre.
+- Menggunakan **Tailwind CSS** dengan variabel warna global dan sistem tema (dark/light).
+- Desain sepenuhnya **responsif** dan mobile-friendly.
+
+### **CPMK0502: HTML, JavaScript, React**
+
+- Struktur HTML5 semantik (`header`, `main`, `section`, `footer`).
+- Penggunaan  **modern JavaScript** : arrow function, async/await, destructuring, template literal.
+- **React Hooks:** `useState`, `useEffect`, `useParams`, `useNavigate`.
+- Komponen terpisah per fungsi (reusable & maintainable).
+- Integrasi **API eksternal (RAWG.io)** dan rendering dinamis.
+- State lokal untuk pagination, filter, dan theme.
+- LocalStorage digunakan untuk menyimpan preferensi tema (dark/light).
+
+---
+
+## Struktur Direktori Inti
+
+src/
+├── assets/                     # File statis (logo, gambar, ikon, dsb)
+│
+├── components/                 # Kumpulan komponen UI dan layout utama
+│   ├── FeaturesSection.jsx     # Section fitur di halaman utama
+│   ├── FilterPanel.jsx         # Panel filter platform di halaman games
+│   ├── Footer.jsx              # Bagian footer global
+│   ├── GameGrid.jsx            # Tampilan grid untuk daftar game
+│   ├── GameTable.jsx           # Tampilan tabel untuk daftar game
+│   ├── HeroSection.jsx         # Hero utama di halaman landing
+│   ├── LoadingScreen.jsx       # Loading overlay global (saat awal)
+│   ├── LoadingState.jsx        # Skeleton loading untuk data game
+│   ├── Navbar.jsx              # Navigasi utama (responsive + dark mode)
+│   ├── SearchForm.jsx          # Form pencarian + sort + view toggle
+│   ├── StatsSection.jsx        # Statistik (game, genre, platform)
+│   └── ThemeToggle.jsx         # Tombol pengatur dark/light mode
+│
+├── lib/                        # Modul pendukung (logic/API/helper)
+│   └── api.js                  # Fungsi fetch data dari RAWG.io API
+│
+├── pages/                      # Halaman utama aplikasi (per route)
+│   ├── ContactUsPage.jsx       # Halaman form kontak (HTML5 validated)
+│   ├── GameDetailPage.jsx      # Halaman detail tiap game
+│   ├── GamesPage.jsx           # Halaman daftar game (filter, pagination)
+│   ├── LandingPage.jsx         # Halaman utama (hero, fitur, statistik)
+│   └── NotFoundPage.jsx        # Halaman 404 custom
+│
+├── App.css                     # Style tambahan (opsional)
+├── App.jsx                     # Root komponen utama (router + layout)
+├── index.css                   # Style global + variabel tema Tailwind
+├── main.jsx                    # Entry point React (render ke DOM)
+│
+└── .gitignore                  # File konfigurasi Git
+
+---
+
+## Cara Menjalankan
+
+### 1. Persiapan Lingkungan
+
+Node.js >= 18 (npm atau bun)
+
+### 2. Instal Dependensi
+
+```bash
+npm install
+# atau
+bun install
+```
+
+### 3. Menjalankan Mode Pengembangan
+
+```bash
+pm run dev
+```
+
+Buka URL yang muncul di terminal (umumnya `http://localhost:5173`)
+
+### 4. Build Produksi (Opsional)
+
+```bash
+npm run build
+npm run preview
+```
+
+---
